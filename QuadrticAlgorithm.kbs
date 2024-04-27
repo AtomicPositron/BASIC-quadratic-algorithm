@@ -1,0 +1,25 @@
+subroutine QuadraticFormula(a, b, c)
+	subFunc = (b^2) - (4 * a * c)
+   	if 	subFunc > 0 then
+   		rootFunc = subFunc ^ 0.5
+   		LHS = rootFunc / 2 * a
+   		xone = -b + LHS
+   		xtwo = -b - LHS
+   		print xone, xtwo
+   	else
+   		rootFunc = "√" + subFunc + "/" + 2 * a
+   		xone = -b + "+" + rootFunc
+   		xtwo = -b + "-" + rootFunc
+   		print xone, xtwo
+   	end if
+   	
+end subroutine 
+
+subroutine main() 
+	inputint "x1- ", xone
+	inputint "x2- ", xtwo
+	inputint "c- ", c
+	call QuadraticFormula(xone, xtwo, c)
+end subroutine
+
+call main()
